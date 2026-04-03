@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Team &mdash; TEDxSelwynHouseSchoolYouth</title>
+  <title>Our Team &mdash; TEDxSelwynHouseSchool Youth</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- Navigation -->
@@ -15,7 +12,8 @@
     <nav class="nav">
       <a href="index.html" class="logo">
         <span class="logo-ted">TED<sup>x</sup></span>
-        <span class="logo-name">Selwyn House School<br><strong>Youth</strong></span>
+        <span class="logo-school">Selwyn House School</span>
+        <span class="logo-youth">Youth</span>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -23,9 +21,9 @@
         <li><a href="team.html" class="active">Team</a></li>
         <li><a href="speakers.html">Speakers</a></li>
         <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="sponsors.html">Sponsors</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="contact.html#signup" class="nav-btn">Sign Up</a></li>
+        <!-- REGISTER LINK: Replace the # below with your Google Form URL -->
+        <li><a href="#" class="nav-btn">Register</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -38,104 +36,119 @@
     <div class="container">
       <span class="label-tag fade-up">The People</span>
       <h1 class="fade-up delay-1">Our <span class="text-red">Team</span></h1>
-      <p class="page-hero-desc fade-up delay-2">The students and staff behind TEDxSelwynHouseSchoolYouth.</p>
+      <p class="page-hero-desc fade-up delay-2">The students and staff behind TEDxSelwynHouseSchool Youth.</p>
     </div>
   </section>
 
-  <!-- Organizer -->
+  <!-- Team Members -->
   <section class="section bg-white">
     <div class="container">
       <div class="section-header fade-up">
-        <span class="label-tag">Leadership</span>
-        <h2>Event <span class="text-red">Organizers</span></h2>
+        <span class="label-tag">Team</span>
+        <h2>Meet the <span class="text-red">Team</span></h2>
       </div>
-      <div class="team-grid team-grid-featured">
-        <div class="team-card fade-up">
-          <div class="team-avatar">
-            <div class="avatar-placeholder">
-              <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
-            </div>
-          </div>
-          <h3>Event Organizer</h3>
-          <p class="team-role">Lead Organizer &amp; Licensee</p>
-          <p class="team-bio">Responsible for organizing and curating the TEDxSelwynHouseSchoolYouth event, ensuring it meets all TED guidelines and delivers an inspiring experience.</p>
-        </div>
-        <div class="team-card fade-up delay-1">
-          <div class="team-avatar">
-            <div class="avatar-placeholder">
-              <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
-            </div>
-          </div>
-          <h3>Faculty Advisor</h3>
-          <p class="team-role">Staff Supervisor</p>
-          <p class="team-bio">Provides mentorship and oversight to the student organizing team, ensuring the event aligns with school values and TEDx standards.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Core Team -->
-  <section class="section bg-light">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="label-tag">Coordinators</span>
-        <h2>Core <span class="text-red">Team</span></h2>
-      </div>
+      <!--
+        ============================================================
+        HOW TO EDIT TEAM MEMBERS:
+        - Each team member is a <div class="team-card"> block below
+        - Change the name inside the <h3> tag
+        - Change the role inside the <p class="team-role"> tag
+        - To add a new member: copy any team-card block and paste it
+        - To remove a member: delete the entire team-card block
+        ============================================================
+      -->
+
       <div class="team-grid">
+
+        <!-- Team Member 1 -->
         <div class="team-card fade-up">
           <div class="team-avatar">
-            <div class="avatar-placeholder small">
+            <div class="avatar-placeholder">
               <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
             </div>
           </div>
-          <h3>Team Member</h3>
-          <p class="team-role">Speaker Curation</p>
+          <h3>Ms. Segal</h3>
+          <p class="team-role">Faculty Advisor</p>
         </div>
+
+        <!-- Team Member 2 -->
         <div class="team-card fade-up delay-1">
           <div class="team-avatar">
-            <div class="avatar-placeholder small">
+            <div class="avatar-placeholder">
               <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
             </div>
           </div>
-          <h3>Team Member</h3>
-          <p class="team-role">Marketing &amp; Design</p>
+          <h3>Ms. Littman</h3>
+          <p class="team-role">Faculty Advisor</p>
         </div>
+
+        <!-- Team Member 3 -->
         <div class="team-card fade-up delay-2">
           <div class="team-avatar">
-            <div class="avatar-placeholder small">
+            <div class="avatar-placeholder">
               <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
             </div>
           </div>
-          <h3>Team Member</h3>
-          <p class="team-role">Logistics &amp; Operations</p>
+          <h3>Adam Sun</h3>
+          <p class="team-role">Organizer</p>
         </div>
+
+        <!-- Team Member 4 -->
         <div class="team-card fade-up delay-3">
           <div class="team-avatar">
-            <div class="avatar-placeholder small">
+            <div class="avatar-placeholder">
               <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
             </div>
           </div>
-          <h3>Team Member</h3>
-          <p class="team-role">Sponsorships</p>
+          <h3>Bill Zhang</h3>
+          <p class="team-role">Organizer</p>
         </div>
+
+        <!-- Team Member 5 -->
         <div class="team-card fade-up">
           <div class="team-avatar">
-            <div class="avatar-placeholder small">
+            <div class="avatar-placeholder">
               <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
             </div>
           </div>
-          <h3>Team Member</h3>
-          <p class="team-role">Media &amp; Production</p>
+          <h3>Ken Lin</h3>
+          <p class="team-role">Organizer</p>
         </div>
+
+        <!-- Team Member 6 -->
         <div class="team-card fade-up delay-1">
           <div class="team-avatar">
-            <div class="avatar-placeholder small">
+            <div class="avatar-placeholder">
               <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
             </div>
           </div>
-          <h3>Team Member</h3>
-          <p class="team-role">Experience &amp; Hospitality</p>
+          <h3>Nathan Chen</h3>
+          <p class="team-role">Organizer</p>
         </div>
+
+        <!-- Team Member 7 -->
+        <div class="team-card fade-up delay-2">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+          </div>
+          <h3>William Li</h3>
+          <p class="team-role">Organizer</p>
+        </div>
+
+        <!-- Team Member 8 -->
+        <div class="team-card fade-up delay-3">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 68c0-15.46 12.54-28 28-28s28 12.54 28 28" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+          </div>
+          <h3>Xavier Babkine-Osterrath</h3>
+          <p class="team-role">Organizer</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -147,7 +160,8 @@
         <div class="footer-brand">
           <a href="index.html" class="logo">
             <span class="logo-ted">TED<sup>x</sup></span>
-            <span class="logo-name">Selwyn House School<br><strong>Youth</strong></span>
+            <span class="logo-school">Selwyn House School</span>
+            <span class="logo-youth">Youth</span>
           </a>
           <p class="footer-license">This independent TEDx event is operated under license from TED.</p>
         </div>
@@ -159,26 +173,15 @@
             <li><a href="team.html">Team</a></li>
             <li><a href="speakers.html">Speakers</a></li>
             <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="sponsors.html">Sponsors</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-event">
           <h4>Event Details</h4>
           <p>April 27, 2026</p>
+          <p>4:15 PM &ndash; 6:15 PM</p>
           <p>Rossy Agora<br>95 Chem. de la C&ocirc;te-Saint-Antoine<br>Westmount, QC H3Y 2H8</p>
         </div>
-        <div class="footer-social">
-          <h4>Follow Us</h4>
-          <div class="social-links">
-            <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
-            <a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 .5-2 2-2s2 1 2 2v5"/></svg></a>
-            <a href="mailto:tedx@selwyn.ca" class="social-icon" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TEDxSelwynHouseSchoolYouth. This independent TEDx event is operated under license from TED.</p>
       </div>
     </div>
   </footer>
