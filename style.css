@@ -408,7 +408,7 @@ a:focus-visible, button:focus-visible {
   font-family: var(--font);
   font-size: clamp(3.5rem, 10vw, 7.5rem);
   font-weight: 900;
-  line-height: 0.92;
+  line-height: 0.97;
   letter-spacing: -0.04em;
   color: var(--black);
   margin-bottom: var(--s3);
@@ -944,4 +944,3 @@ a:focus-visible, button:focus-visible {
   .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; }
   .stat-item:last-child { border-bottom: none; }
 }
-#
