@@ -406,7 +406,7 @@ a:focus-visible, button:focus-visible {
 
 .hero-title {
   font-family: var(--font);
-  font-size: clamp(3.5rem, 10vw, 7.5rem);
+  font-size: clamp(4.2rem, 11vw, 9rem);
   font-weight: 900;
   line-height: 0.97;
   letter-spacing: -0.04em;
@@ -430,7 +430,7 @@ a:focus-visible, button:focus-visible {
 .hero-title.visible .text-red::after { width: 100%; }
 
 .hero-subtitle {
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
   color: var(--gray-500); max-width: 520px;
   margin: 0 auto var(--s5); line-height: 1.75; font-weight: 400;
 }
@@ -476,7 +476,7 @@ a:focus-visible, button:focus-visible {
 .stat-item:hover { transform: scale(1.08); }
 
 .stat-number {
-  font-size: 2.2rem; font-weight: 900;
+  font-size: 2.7rem; font-weight: 900;
   color: var(--ted-red); line-height: 1; letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
 }
@@ -551,14 +551,14 @@ a:focus-visible, button:focus-visible {
 
 .section-header h2 {
   font-family: var(--font);
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-size: clamp(2.1rem, 4.5vw, 3.25rem);
   font-weight: 900; letter-spacing: -0.04em; line-height: 1;
   margin-bottom: var(--s2); color: var(--black);
 }
 .bg-black .section-header h2 { color: var(--white); }
 
 .section-desc {
-  color: var(--gray-500); font-size: 1rem;
+  color: var(--gray-500); font-size: 1.1rem;
   max-width: 480px; margin: 0 auto; line-height: 1.7;
 }
 
@@ -581,8 +581,8 @@ a:focus-visible, button:focus-visible {
    TWO COLUMN LAYOUT
    ============================================ */
 .two-col { display: grid; grid-template-columns: 260px 1fr; gap: var(--s10); align-items: start; }
-.col-content h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: var(--s3); color: var(--black); }
-.col-content p { color: var(--gray-700); font-size: 1rem; line-height: 1.85; margin-bottom: var(--s2); }
+.col-content h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: var(--s3); color: var(--black); }
+.col-content p { color: var(--gray-700); font-size: 1.05rem; line-height: 1.85; margin-bottom: var(--s2); }
 
 /* ============================================
    INFO CARDS — with hover lift + glow
@@ -655,7 +655,7 @@ a:focus-visible, button:focus-visible {
   transform: translateY(-4px);
 }
 
-.cta-card h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: var(--s1); color: var(--white); letter-spacing: -0.02em; }
+.cta-card h3 { font-size: 1.45rem; font-weight: 900; margin-bottom: var(--s1); color: var(--white); letter-spacing: -0.02em; }
 .cta-card p { font-size: 0.88rem; color: var(--gray-400); line-height: 1.65; margin-bottom: var(--s3); }
 
 .cta-link {
@@ -711,17 +711,17 @@ a:focus-visible, button:focus-visible {
 }
 
 .speaker-photo {
-  flex-shrink: 0; width: 96px; height: 96px; border-radius: 0;
+  flex-shrink: 0; width: 160px; height: 160px; border-radius: 0;
   overflow: hidden; background: var(--gray-100);
   display: flex; align-items: center; justify-content: center;
   border: 1px solid var(--gray-200);
   transition: transform var(--dur-std) var(--ease-spring);
 }
 .speaker-card-full:hover .speaker-photo { transform: scale(1.05); }
-.speaker-photo img { width: 100%; height: 100%; object-fit: cover; }
+.speaker-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 
 .speaker-details { display: flex; flex-direction: column; justify-content: center; }
-.speaker-details h3 { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 4px; letter-spacing: -0.02em; }
+.speaker-details h3 { font-size: 1.25rem; font-weight: 800; color: var(--black); margin-bottom: 4px; letter-spacing: -0.02em; }
 .speaker-title { font-size: 0.75rem; font-weight: 700; color: var(--ted-red); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: var(--s1); }
 .speaker-desc { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; }
 
@@ -751,6 +751,15 @@ a:focus-visible, button:focus-visible {
 
 .team-avatar { margin-bottom: var(--s3); }
 
+.team-avatar img {
+  width: 120px; height: 120px; margin: 0 auto;
+  object-fit: cover; object-position: top center;
+  display: block; border-radius: 0;
+  border: 1px solid var(--gray-200);
+  transition: transform var(--dur-std) var(--ease-spring);
+}
+.team-card:hover .team-avatar img { transform: scale(1.06); }
+
 .avatar-placeholder {
   width: 80px; height: 80px; margin: 0 auto;
   color: var(--gray-300); background: var(--gray-100); border-radius: 0;
@@ -759,7 +768,7 @@ a:focus-visible, button:focus-visible {
 }
 .team-card:hover .avatar-placeholder { transform: scale(1.08) rotate(-3deg); background: var(--ted-red-light); }
 
-.team-card h3 { font-size: 0.95rem; font-weight: 800; color: var(--black); margin-bottom: 4px; letter-spacing: -0.01em; }
+.team-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--black); margin-bottom: 4px; letter-spacing: -0.01em; }
 .team-role { font-size: 0.65rem; color: var(--ted-red); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
 .team-bio { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; margin-top: var(--s1); }
 
@@ -798,7 +807,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .schedule-content { padding-left: var(--s3); }
-.schedule-content h3 { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 4px; letter-spacing: -0.02em; }
+.schedule-content h3 { font-size: 1.25rem; font-weight: 800; color: var(--black); margin-bottom: 4px; letter-spacing: -0.02em; }
 .schedule-content p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; }
 
 .schedule-tag {
@@ -814,7 +823,7 @@ a:focus-visible, button:focus-visible {
    ============================================ */
 .contact-grid { display: grid; grid-template-columns: 1fr; gap: var(--s6); max-width: 640px; margin: 0 auto; }
 
-.contact-info h2 { font-size: 2rem; font-weight: 900; margin-bottom: var(--s2); color: var(--black); letter-spacing: -0.04em; }
+.contact-info h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: var(--s2); color: var(--black); letter-spacing: -0.04em; }
 .contact-info > p { color: var(--gray-500); line-height: 1.7; margin-bottom: var(--s5); }
 
 .contact-detail {
@@ -841,8 +850,8 @@ a:focus-visible, button:focus-visible {
   border-bottom: 1px solid var(--gray-200);
 }
 .content-block:last-child { border-bottom: none; }
-.content-block h2 { font-size: 1.6rem; font-weight: 900; color: var(--black); margin-bottom: var(--s3); letter-spacing: -0.03em; line-height: 1.1; }
-.content-block p { font-size: 1rem; color: var(--gray-700); line-height: 1.85; margin-bottom: var(--s2); }
+.content-block h2 { font-size: 2rem; font-weight: 900; color: var(--black); margin-bottom: var(--s3); letter-spacing: -0.03em; line-height: 1.1; }
+.content-block p { font-size: 1.05rem; color: var(--gray-700); line-height: 1.85; margin-bottom: var(--s2); }
 
 /* ============================================
    FOOTER
@@ -926,7 +935,7 @@ a:focus-visible, button:focus-visible {
 
   .section { padding: var(--s10) 0; }
   .page-hero { padding: var(--s10) 0 var(--s6); text-align: center; }
-  .page-hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .page-hero h1 { font-size: clamp(2.4rem, 9vw, 3.8rem); }
 
   .hero-bg-layer--1 { clip-path: polygon(65% 0%, 100% 0%, 100% 100%, 45% 100%); }
 
