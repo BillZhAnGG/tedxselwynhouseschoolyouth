@@ -23,7 +23,6 @@
         <li><a href="speakers.html">Speakers</a></li>
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <!-- REGISTER LINK: Replace the href below with your Google Form URL if it changes -->
         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdbpwzhTMs6wh6jrkO545HUub6v7mnMCa4WJRmnMCpncE_-FA/viewform" class="nav-btn">Register</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -32,20 +31,24 @@
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero — with parallax layers -->
   <section class="hero" id="home">
+    <!-- Parallax background layers -->
+    <div class="hero-bg-layer hero-bg-layer--1"></div>
+    <div class="hero-bg-layer hero-bg-layer--2"></div>
+    <div class="hero-bg-layer hero-bg-layer--3"></div>
+
     <div class="hero-content">
       <div class="hero-badge fade-up">April 27, 2026 &bull; Westmount, QC</div>
-      <h1 class="hero-title fade-up delay-1">
+      <h1 class="hero-title fade-up">
         Beyond<br /><span class="text-red">the Obvious.</span>
       </h1>
-      <p class="hero-subtitle fade-up delay-2">
+      <p class="hero-subtitle fade-up">
         TEDxSelwynHouseSchool Youth brings together students, educators, and
         community voices to share ideas that inspire, challenge, and ignite
         meaningful conversation.
       </p>
-      <div class="hero-cta fade-up delay-3">
-        <!-- REGISTER LINK: Replace the href below with your Google Form URL if it changes -->
+      <div class="hero-cta fade-up">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbpwzhTMs6wh6jrkO545HUub6v7mnMCa4WJRmnMCpncE_-FA/viewform" class="btn btn-red">Register Now</a>
         <a href="speakers.html" class="btn btn-outline-dark">View Speakers</a>
       </div>
@@ -55,23 +58,45 @@
     </div>
   </section>
 
-  <!-- Stats Bar -->
+  <!-- Marquee Ticker -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Beyond the Obvious</span>
+      <span>&bull;</span>
+      <span>April 27, 2026</span>
+      <span>&bull;</span>
+      <span>9 Live Speakers</span>
+      <span>&bull;</span>
+      <span>TEDxSelwynHouseSchool Youth</span>
+      <span>&bull;</span>
+      <span>Beyond the Obvious</span>
+      <span>&bull;</span>
+      <span>April 27, 2026</span>
+      <span>&bull;</span>
+      <span>9 Live Speakers</span>
+      <span>&bull;</span>
+      <span>TEDxSelwynHouseSchool Youth</span>
+      <span>&bull;</span>
+    </div>
+  </div>
+
+  <!-- Stats Bar — with animated counters -->
   <div class="stats-bar">
     <div class="container">
       <div class="stats-row">
-        <div class="stat-item fade-up">
-          <span class="stat-number">9</span>
+        <div class="stat-item scale-in">
+          <span class="stat-number" data-count="9">0</span>
           <span class="stat-label">Live Speakers</span>
         </div>
-        <div class="stat-item fade-up delay-1">
-          <span class="stat-number">1</span>
+        <div class="stat-item scale-in">
+          <span class="stat-number" data-count="1">0</span>
           <span class="stat-label">Big Theme</span>
         </div>
-        <div class="stat-item fade-up delay-2">
-          <span class="stat-number">2h</span>
+        <div class="stat-item scale-in">
+          <span class="stat-number" data-count="2" data-suffix="h">0</span>
           <span class="stat-label">Of Ideas</span>
         </div>
-        <div class="stat-item fade-up delay-3">
+        <div class="stat-item scale-in">
           <span class="stat-number">Apr 27</span>
           <span class="stat-label">Mark Your Calendar</span>
         </div>
@@ -83,10 +108,10 @@
   <section class="section bg-white" id="what-is-tedx">
     <div class="container">
       <div class="two-col">
-        <div class="col-label fade-up">
+        <div class="col-label slide-left">
           <span class="label-tag">What is TEDx?</span>
         </div>
-        <div class="col-content fade-up delay-1">
+        <div class="col-content slide-right">
           <h2>In the spirit of discovering and spreading ideas</h2>
           <p>
             TEDx is a program of local, self-organized events that bring people
@@ -108,25 +133,25 @@
     <div class="container">
       <div class="section-header fade-up">
         <span class="label-tag">The Event</span>
-        <h2>TEDxSelwynHouseSchool Youth <span class="text-red">2026</span></h2>
-        <p class="section-desc">Theme: <strong>Beyond the Obvious</strong></p>
+        <h2 class="text-reveal">TEDxSelwynHouseSchool Youth <span class="text-red">2026</span></h2>
+        <p class="section-desc fade-up">Theme: <strong>Beyond the Obvious</strong></p>
       </div>
       <div class="info-grid">
-        <div class="info-card fade-up">
+        <div class="info-card scale-in">
           <div class="info-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="0"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg>
           </div>
           <h3>Date</h3>
           <p>April 27, 2026</p>
         </div>
-        <div class="info-card fade-up delay-1">
+        <div class="info-card scale-in">
           <div class="info-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
           </div>
           <h3>Venue</h3>
           <p>Rossy Agora<br>Westmount, QC</p>
         </div>
-        <div class="info-card fade-up delay-2">
+        <div class="info-card scale-in">
           <div class="info-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
@@ -140,12 +165,12 @@
   <!-- Speakers Preview -->
   <section class="section bg-white">
     <div class="container">
-      <div class="section-header fade-up">
+      <div class="section-header slide-left">
         <span class="label-tag">Speakers</span>
         <h2>Voices That <span class="text-red">Inspire</span></h2>
         <p class="section-desc">9 confirmed speakers exploring ideas beyond the obvious.</p>
       </div>
-      <div class="speakers-preview fade-up delay-1">
+      <div class="speakers-preview scale-in">
         <div class="speakers-coming-soon">
           <p>Our full speaker lineup is confirmed. Meet all 9 speakers.</p>
           <a href="speakers.html" class="btn btn-red-outline">View All Speakers</a>
@@ -159,17 +184,16 @@
     <div class="container">
       <div class="section-header fade-up">
         <span class="label-tag label-tag-dark">Get Involved</span>
-        <h2 class="text-white">Be Part of <span class="text-red">the Experience</span></h2>
+        <h2 class="text-white text-reveal">Be Part of <span class="text-red">the Experience</span></h2>
         <p class="section-desc text-gray">Join us at TEDxSelwynHouseSchool Youth 2026.</p>
       </div>
       <div class="cta-grid">
-        <div class="cta-card fade-up">
+        <div class="cta-card slide-left">
           <h3>Attend</h3>
           <p>Register for the event and join us for an evening of ideas worth spreading.</p>
-          <!-- REGISTER LINK: Replace the href below with your Google Form URL if it changes -->
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbpwzhTMs6wh6jrkO545HUub6v7mnMCa4WJRmnMCpncE_-FA/viewform" class="cta-link">Register Now &rarr;</a>
         </div>
-        <div class="cta-card fade-up delay-1">
+        <div class="cta-card slide-right">
           <h3>Learn More</h3>
           <p>Discover what TEDx is all about and what to expect at our event.</p>
           <a href="about.html" class="cta-link">About TEDx &rarr;</a>
@@ -182,17 +206,15 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
+        <div class="footer-brand fade-up">
           <a href="index.html" class="logo">
             <span class="logo-ted">TED<sup>x</sup></span>
             <span class="logo-school">Selwyn House School</span>
             <span class="logo-youth">Youth</span>
           </a>
-          <p class="footer-license">
-            This independent TEDx event is operated under license from TED.
-          </p>
+          <p class="footer-license">This independent TEDx event is operated under license from TED.</p>
         </div>
-        <div class="footer-nav">
+        <div class="footer-nav fade-up">
           <h4>Pages</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -203,7 +225,7 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-event">
+        <div class="footer-event fade-up">
           <h4>Event Details</h4>
           <p>April 27, 2026</p>
           <p>4:15 PM &ndash; 6:15 PM</p>
