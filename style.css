@@ -866,7 +866,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .footer-brand .logo { margin-bottom: var(--s2); }
-.footer-brand .logo img { filter: brightness(0) invert(1); height: 44px; }
+.footer-brand .logo img { height: 44px; }
 
 .footer-license { font-size: 0.78rem; color: var(--gray-500); line-height: 1.7; max-width: 300px; }
 
