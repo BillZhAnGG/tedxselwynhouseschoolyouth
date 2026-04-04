@@ -229,20 +229,16 @@ a:focus-visible, button:focus-visible {
 
 /* Logo */
 .logo {
-  display: flex; flex-direction: column; align-items: flex-start;
-  gap: 0; text-decoration: none; line-height: 1;
-  min-height: unset;
+  display: inline-flex; align-items: center;
+  min-height: unset; text-decoration: none;
   transition: transform var(--dur-std) var(--ease-spring);
 }
 .logo:hover { transform: scale(1.03); }
-
-.logo-ted {
-  font-family: var(--font); font-size: 1.5rem; font-weight: 900;
-  color: var(--ted-red); line-height: 1; letter-spacing: -0.02em;
+.logo img {
+  height: 48px;
+  width: auto;
+  display: block;
 }
-.logo-ted sup { font-size: 0.55em; vertical-align: super; color: var(--ted-red); font-weight: 900; }
-.logo-school { font-size: 0.72rem; line-height: 1.25; color: var(--dark); font-weight: 400; display: block; min-height: unset; }
-.logo-youth  { font-size: 0.72rem; font-weight: 700; color: var(--dark); line-height: 1.25; display: block; min-height: unset; }
 
 /* Nav links */
 .nav-links { display: flex; align-items: center; gap: var(--s3); }
@@ -870,9 +866,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .footer-brand .logo { margin-bottom: var(--s2); }
-.footer-brand .logo-ted { color: var(--ted-red); }
-.footer-brand .logo-school { color: var(--gray-300); }
-.footer-brand .logo-youth  { color: var(--white); }
+.footer-brand .logo img { filter: brightness(0) invert(1); height: 44px; }
 
 .footer-license { font-size: 0.78rem; color: var(--gray-500); line-height: 1.7; max-width: 300px; }
 
@@ -953,4 +947,3 @@ a:focus-visible, button:focus-visible {
   .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; }
   .stat-item:last-child { border-bottom: none; }
 }
-#
