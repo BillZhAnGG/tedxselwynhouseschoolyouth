@@ -240,6 +240,14 @@ a:focus-visible, button:focus-visible {
   display: block;
 }
 
+.logo-ted {
+  font-family: var(--font); font-size: 1.5rem; font-weight: 900;
+  color: var(--ted-red); line-height: 1; letter-spacing: -0.02em;
+}
+.logo-ted sup { font-size: 0.55em; vertical-align: super; color: var(--ted-red); font-weight: 900; }
+.logo-school { font-size: 0.72rem; line-height: 1.25; color: var(--dark); font-weight: 400; display: block; min-height: unset; }
+.logo-youth  { font-size: 0.72rem; font-weight: 700; color: var(--dark); line-height: 1.25; display: block; min-height: unset; }
+
 /* Nav links */
 .nav-links { display: flex; align-items: center; gap: var(--s3); }
 
@@ -866,7 +874,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .footer-brand .logo { margin-bottom: var(--s2); }
-.footer-brand .logo img { height: 44px; }
+.footer-brand .logo img { height: 44px; width: auto; display: block; }
 
 .footer-license { font-size: 0.78rem; color: var(--gray-500); line-height: 1.7; max-width: 300px; }
 
