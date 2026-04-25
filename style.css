@@ -821,6 +821,13 @@ a:focus-visible, button:focus-visible {
   color: var(--ted-red); background: var(--ted-red-light);
   padding: 3px 10px; border-radius: 0;
 }
+.schedule-tag--break {
+  color: var(--gray-500); background: var(--gray-100);
+}
+.speaker-talk-title {
+  font-size: 0.92rem; color: var(--gray-700);
+  line-height: 1.5; font-style: italic; margin-top: 2px;
+}
 
 /* ============================================
    CONTACT
