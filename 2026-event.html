@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 Event &mdash; TEDxSelwyn House School Youth</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Gallery page styles ── */
+    .gallery-hero {
+      background: var(--black);
+      padding: var(--s12) 0 var(--s8);
+      text-align: left;
+    }
+    .gallery-hero .label-tag {
+      color: rgba(230,43,30,0.8);
+    }
+    .gallery-hero h1 {
+      color: var(--white);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--s2);
+    }
+    .gallery-hero p {
+      color: var(--gray-400);
+      font-size: 1rem;
+      margin-top: var(--s2);
+    }
+
+    /* ── Slideshow ── */
+    .slideshow-section {
+      background: var(--black);
+      padding: 0 0 var(--s12);
+    }
+    .slideshow-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 var(--s4);
+    }
+    .slideshow {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      background: #111;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.7s var(--ease-std), transform 0.7s var(--ease-std);
+      transform: translateX(60px);
+    }
+    .slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      z-index: 1;
+    }
+    .slide.prev {
+      opacity: 0;
+      transform: translateX(-60px);
+      z-index: 0;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ── Controls ── */
+    .slideshow-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: var(--s3);
+    }
+    .slide-btn {
+      background: none;
+      border: 1px solid var(--gray-700);
+      color: var(--white);
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color var(--dur-std), background var(--dur-std);
+      flex-shrink: 0;
+    }
+    .slide-btn:hover {
+      border-color: var(--ted-red);
+      background: var(--ted-red);
+    }
+    .slide-btn svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    /* ── Dots ── */
+    .slide-dots {
+      display: flex;
+      gap: var(--s1);
+      flex-wrap: wrap;
+      justify-content: center;
+      flex: 1;
+      padding: 0 var(--s3);
+    }
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gray-700);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      min-width: 0;
+      min-height: 0;
+      transition: background var(--dur-std), transform var(--dur-std);
+    }
+    .slide-dot.active {
+      background: var(--ted-red);
+      transform: scale(1.4);
+    }
+
+    /* ── Counter ── */
+    .slide-counter {
+      color: var(--gray-500);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .slide-counter span {
+      color: var(--white);
+    }
+
+    /* ── Autoplay bar ── */
+    .autoplay-bar {
+      height: 2px;
+      background: var(--gray-800);
+      margin-top: var(--s2);
+      position: relative;
+      overflow: hidden;
+    }
+    .autoplay-progress {
+      height: 100%;
+      background: var(--ted-red);
+      width: 0%;
+      transition: width linear;
+    }
+
+    /* ── Thumbnail strip ── */
+    .thumb-strip {
+      display: flex;
+      gap: var(--s1);
+      margin-top: var(--s3);
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .thumb-strip::-webkit-scrollbar { display: none; }
+    .thumb {
+      flex-shrink: 0;
+      width: 80px;
+      height: 54px;
+      overflow: hidden;
+      cursor: pointer;
+      opacity: 0.4;
+      border: 2px solid transparent;
+      transition: opacity var(--dur-std), border-color var(--dur-std);
+    }
+    .thumb:hover { opacity: 0.7; }
+    .thumb.active {
+      opacity: 1;
+      border-color: var(--ted-red);
+    }
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Keyboard hint ── */
+    .keyboard-hint {
+      text-align: center;
+      color: var(--gray-700);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      margin-top: var(--s3);
+    }
+    .keyboard-hint kbd {
+      border: 1px solid var(--gray-700);
+      padding: 1px 5px;
+      font-family: var(--font);
+      font-size: 0.7rem;
+      color: var(--gray-500);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header scrolled-always" id="header">
+    <nav class="nav">
+      <a href="index.html" class="logo"><img src="images/logo-black.png" alt="TEDxSelwyn House School Youth"></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About TEDx</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="speakers.html">2026 Speakers</a></li>
+        <li><a href="2026-event.html" class="active">2026 Event</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdbpwzhTMs6wh6jrkO545HUub6v7mnMCa4WJRmnMCpncE_-FA/viewform" class="nav-btn">Register</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="gallery-hero">
+    <div class="container">
+      <span class="label-tag fade-up">The Event</span>
+      <h1 class="fade-up">2026 <span class="text-red">Event</span></h1>
+      <p class="fade-up">Photos from TEDxSelwyn House School Youth 2026 &mdash; Westmount, QC.</p>
+    </div>
+  </section>
+
+  <!-- Slideshow -->
+  <section class="slideshow-section">
+    <div class="slideshow-wrap">
+
+      <div class="slideshow" id="slideshow" role="region" aria-label="Event photo gallery">
+        <div class="slide active"><img src="images/2026-04-27 TEDx SHS event-1.jpg"  alt="Audience at TEDxSelwyn House School Youth 2026"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-6.jpg"   alt="Speaker at podium"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-10 (1).jpg"  alt="TEDx Selwyn House Youth sign"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-11.jpg"  alt="Speaker on stage"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-18.jpg"  alt="Speaker presenting"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-24.jpg"  alt="Speaker on stage"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-32.jpg"  alt="Speaker at TEDx event"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-35.jpg"  alt="Speaker presenting ideas"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-38.jpg"  alt="Speaker under projection screen"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-47.jpg"  alt="Speaker addressing audience"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-54.jpg"  alt="Speaker on stage"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-57.jpg"  alt="Speaker presenting"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-69.jpg"  alt="Group photo at TEDxSelwyn House School Youth 2026"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-78.jpg"  alt="Speaker at podium"></div>
+        <div class="slide"><img src="images/2026-04-27 TEDx SHS event-79.jpg"  alt="Speaker on stage"></div>
+      </div>
+
+      <!-- Controls -->
+      <div class="slideshow-controls">
+        <button class="slide-btn" id="prevBtn" aria-label="Previous photo">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="slide-dots" id="slideDots"></div>
+
+        <span class="slide-counter"><span id="currentNum">1</span> / <span id="totalNum">15</span></span>
+
+        <button class="slide-btn" id="nextBtn" aria-label="Next photo">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Autoplay progress bar -->
+      <div class="autoplay-bar">
+        <div class="autoplay-progress" id="autoplayProgress"></div>
+      </div>
+
+      <!-- Thumbnail strip -->
+      <div class="thumb-strip" id="thumbStrip"></div>
+
+      <p class="keyboard-hint"><kbd>←</kbd> <kbd>→</kbd> arrow keys to navigate &nbsp;&bull;&nbsp; <kbd>Space</kbd> to pause</p>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand fade-up"><a href="index.html" class="logo"><img src="images/logo-white.png" alt="TEDxSelwyn House School Youth"></a>
+          <p class="footer-license">This independent TEDx event is operated under license from TED.</p>
+        </div>
+        <div class="footer-nav fade-up">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About TEDx</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="speakers.html">2026 Speakers</a></li>
+            <li><a href="2026-event.html">2026 Event</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-event fade-up">
+          <h4>Event Details</h4>
+          <p>Rossy Agora<br>Westmount, QC H3Y 2H8</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>This independent TEDx event is operated under license from TED.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      const slides     = Array.from(document.querySelectorAll('.slide'));
+      const dotsWrap   = document.getElementById('slideDots');
+      const thumbWrap  = document.getElementById('thumbStrip');
+      const prevBtn    = document.getElementById('prevBtn');
+      const nextBtn    = document.getElementById('nextBtn');
+      const currentNum = document.getElementById('currentNum');
+      const totalNum   = document.getElementById('totalNum');
+      const progress   = document.getElementById('autoplayProgress');
+      const INTERVAL   = 4000;
+
+      let current   = 0;
+      let timer     = null;
+      let paused    = false;
+      let progTimer = null;
+
+      totalNum.textContent = slides.length;
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+
+      // Build thumbnails
+      slides.forEach((slide, i) => {
+        const img = slide.querySelector('img');
+        const thumb = document.createElement('div');
+        thumb.className = 'thumb' + (i === 0 ? ' active' : '');
+        thumb.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+        thumb.addEventListener('click', () => goTo(i));
+        thumbWrap.appendChild(thumb);
+      });
+
+      const dots   = Array.from(dotsWrap.querySelectorAll('.slide-dot'));
+      const thumbs = Array.from(thumbWrap.querySelectorAll('.thumb'));
+
+      function goTo(index) {
+        slides[current].classList.remove('active');
+        slides[current].classList.add('prev');
+        dots[current].classList.remove('active');
+        thumbs[current].classList.remove('active');
+
+        // Clean up prev class after transition
+        const old = current;
+        setTimeout(() => slides[old].classList.remove('prev'), 700);
+
+        current = (index + slides.length) % slides.length;
+
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        thumbs[current].classList.add('active');
+        currentNum.textContent = current + 1;
+
+        // Scroll thumbnail into view
+        thumbs[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+        resetProgress();
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      // Autoplay
+      function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => { if (!paused) next(); }, INTERVAL);
+      }
+
+      function resetProgress() {
+        clearTimeout(progTimer);
+        progress.style.transition = 'none';
+        progress.style.width = '0%';
+        if (!paused) {
+          progTimer = setTimeout(() => {
+            progress.style.transition = `width ${INTERVAL}ms linear`;
+            progress.style.width = '100%';
+          }, 30);
+        }
+      }
+
+      prevBtn.addEventListener('click', () => { prev(); });
+      nextBtn.addEventListener('click', () => { next(); });
+
+      // Keyboard
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft')  prev();
+        if (e.key === ' ') {
+          e.preventDefault();
+          paused = !paused;
+          if (paused) {
+            progress.style.transition = 'none';
+            progress.style.width = '0%';
+          } else {
+            resetProgress();
+          }
+        }
+      });
+
+      // Touch swipe
+      let touchStartX = 0;
+      const ss = document.getElementById('slideshow');
+      ss.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      ss.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) dx < 0 ? next() : prev();
+      });
+
+      startTimer();
+      resetProgress();
+    })();
+  </script>
+</body>
+</html>
