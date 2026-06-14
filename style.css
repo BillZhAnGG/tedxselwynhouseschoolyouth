@@ -495,16 +495,32 @@ a:focus-visible, button:focus-visible {
    PAGE HERO — with animated accent bar
    ============================================ */
 .page-hero {
-  padding: var(--s12) 0 var(--s8);
+  padding: calc(var(--s12) + var(--s6)) 0 var(--s10);
   background: var(--black); color: var(--white);
   text-align: left; position: relative; overflow: hidden;
 }
 
-/* Animated bottom accent — draws on page load */
+/* Grayscale facade backdrop — ties inner pages to the landing */
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('images/selwyn-facade.jpg') center 35% / cover no-repeat;
+  filter: grayscale(100%) brightness(0.32) contrast(1.05);
+  z-index: 0;
+}
+
+/* Red + dark veil over the facade */
 .page-hero::after {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background:
+    linear-gradient(115deg, rgba(230,43,30,0.22) 0%, transparent 48%),
+    linear-gradient(0deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.7) 100%);
+}
+
+/* Bottom accent line — draws on page load */
+.page-hero .container::after {
   content: ''; position: absolute;
-  bottom: 0; left: 0;
-  width: 100%; height: 3px;
+  bottom: calc(var(--s10) * -1 + 6px); left: var(--s4); right: var(--s4);
+  height: 2px;
   background: var(--ted-red);
   transform-origin: left;
   animation: draw-line 1s var(--ease-out) forwards;
@@ -515,32 +531,19 @@ a:focus-visible, button:focus-visible {
   100% { transform: scaleX(1); }
 }
 
-/* Floating geometric accents */
-.page-hero::before {
-  content: ''; position: absolute;
-  top: 30%; right: 8%; width: 150px; height: 150px;
-  border: 1px solid rgba(230, 43, 30, 0.15);
-  animation: float-rotate 15s linear infinite;
-}
-
-@keyframes float-rotate {
-  0%   { transform: rotate(0deg) scale(1); }
-  50%  { transform: rotate(180deg) scale(1.1); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
 .page-hero .container { position: relative; z-index: 1; }
 
 .page-hero h1 {
   font-family: var(--font);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 900; letter-spacing: -0.04em; line-height: 0.95;
-  margin-bottom: var(--s2);
+  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  font-weight: 800; letter-spacing: -0.04em; line-height: 0.96;
+  margin-bottom: var(--s3);
 }
 
 .page-hero-desc {
-  font-size: 1rem; color: var(--gray-400);
-  max-width: 480px; margin-top: var(--s2); line-height: 1.6;
+  font-size: 1.02rem; color: rgba(255,255,255,0.72);
+  max-width: 520px; margin-top: var(--s3); line-height: 1.7;
+  padding-left: var(--s4); border-left: 2px solid var(--ted-red);
 }
 
 /* ============================================
@@ -556,7 +559,7 @@ a:focus-visible, button:focus-visible {
 .section-header h2 {
   font-family: var(--font);
   font-size: clamp(2.1rem, 4.5vw, 3.25rem);
-  font-weight: 900; letter-spacing: -0.04em; line-height: 1;
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.04;
   margin-bottom: var(--s2); color: var(--black);
 }
 .bg-black .section-header h2 { color: var(--white); }
@@ -569,15 +572,15 @@ a:focus-visible, button:focus-visible {
 /* Label tag — with animated accent line */
 .label-tag {
   display: inline-block;
-  font-size: 0.65rem; font-weight: 800;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--ted-red); margin-bottom: var(--s2);
-  position: relative; padding-left: var(--s3);
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--ted-red); margin-bottom: var(--s3);
+  position: relative; padding-left: var(--s4);
 }
 .label-tag::before {
   content: ''; position: absolute;
   left: 0; top: 50%; transform: translateY(-50%);
-  width: 16px; height: 2px;
+  width: 26px; height: 2px;
   background: var(--ted-red);
 }
 
@@ -861,7 +864,7 @@ a:focus-visible, button:focus-visible {
   border-bottom: 1px solid var(--gray-200);
 }
 .content-block:last-child { border-bottom: none; }
-.content-block h2 { font-size: 2rem; font-weight: 900; color: var(--black); margin-bottom: var(--s3); letter-spacing: -0.03em; line-height: 1.1; }
+.content-block h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 800; color: var(--black); margin-bottom: var(--s4); letter-spacing: -0.03em; line-height: 1.08; }
 .content-block p { font-size: 1.05rem; color: var(--gray-700); line-height: 1.85; margin-bottom: var(--s2); }
 
 /* ============================================
