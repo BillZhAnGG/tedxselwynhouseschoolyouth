@@ -218,6 +218,26 @@ a:focus-visible, button:focus-visible {
   box-shadow: 0 1px 0 rgba(0,0,0,0.1);
 }
 
+/* Transparent header that blends into the dark hero and
+   stays one consistent colour (no shift to white on scroll). */
+.header--blend {
+  background: transparent;
+  box-shadow: none;
+}
+.header--blend.scrolled,
+.header--blend.scrolled-always {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: none;
+}
+@media (min-width: 769px) {
+  .header--blend .nav-links li > a { color: rgba(255,255,255,0.82); }
+  .header--blend .nav-links li > a:hover,
+  .header--blend .nav-links li > a.active { color: var(--ted-red); }
+}
+.header--blend .hamburger span { background: #fff; }
+
 .nav {
   max-width: 1140px;
   margin: 0 auto;
