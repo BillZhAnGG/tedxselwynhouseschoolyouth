@@ -226,9 +226,7 @@ a:focus-visible, button:focus-visible {
 }
 .header--blend.scrolled,
 .header--blend.scrolled-always {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: #000;
   box-shadow: none;
 }
 @media (min-width: 769px) {
